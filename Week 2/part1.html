@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 2</title>
+    <script>
+        function d0_game() {
+            var colors = ["Blue","Black","Cyan","Green","Orange","Red","Yellow"];
+            var user_input;
+            var random = Math.floor(parseInt(Math.random() *7));
+            var finished = false;
+            var color_random = colors[random];
+            alert(color_random);
+            var guess = 0;
+            while (!finished){
+                user_input = prompt("I am thinking of one of these colors"+"\n\n"+colors+"\n\n"+"What color am I thinking of?");
+                guess++;
+                if (user_input == color_random) {
+                    alert("sucess");
+                    finished = true;
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="d0_game()">
+
+</body>
+</html>
