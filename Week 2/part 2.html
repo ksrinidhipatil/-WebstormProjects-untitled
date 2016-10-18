@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 2</title>
+    <script>
+        var colors = ["Blue", "Black", "Cyan", "Green", "Orange", "Red", "Yellow"];
+        var user_input;
+        var random = Math.floor(parseInt(Math.random() * 7));
+        var finished = false;
+        var color_random = colors[random];
+        alert("for easy debugging the answer is:"+color_random);
+        var guess = 0;
+        function d0_game() {
+            while (!finished) {
+                if (check_guess() == true)
+                    alert("congratulations" + "\n\n" + "you are right you took " + guess + " guesses");
+            }
+        }
+        function check_guess() {
+            user_input = prompt("I am thinking of one of these colors" + "\n\n" + colors + "\n\n" + "What color am I thinking of?");
+            guess++;
+            if (colors.indexOf(user_input) > 6 || colors.indexOf(user_input) < 0) {
+                alert("I don’t recognize that color!");
+                check_guess();
+            }
+            else if (colors.indexOf(user_input) > random) {
+                alert("Your input is alphabetically higher than mine!");
+                check_guess();
+            }
+            else if (colors.indexOf(user_input) < random) {
+                alert("Your input is alphabetically lower than mine!");
+                check_guess();
+            }
+            else if (colors.indexOf(user_input) == random) {
+                document.body.style.backgroundColor = color_random;
+                finished = true;
+                return true;}
+        }
+    </script>
+</head>
+<body onload="d0_game()">
+</body>
+</html>
