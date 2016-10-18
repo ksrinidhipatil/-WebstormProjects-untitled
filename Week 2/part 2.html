@@ -14,7 +14,8 @@
         function d0_game() {
             while (!finished) {
                 if (check_guess() == true)
-                    alert("congratulations" + "\n\n" + "you are right you took " + guess + " guesses");
+                    setTimeout(function(){ alert("congratulations" + "\n\n" + "you are right you took " + guess + " guesses"); }, 100);
+                    alert();
             }
         }
         function check_guess() {
